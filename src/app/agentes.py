@@ -1,7 +1,7 @@
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain import hub
 from src.config.gemini_setup import get_gemini_llm
-from src.app.ferramentas import DadosDeEstudante
+from src.app.ferramentas import DadosDeEstudante, PerfilAcademico
 
 class Agente:
     def __init__(self):
@@ -16,7 +16,7 @@ class Agente:
         
         # 2. Define as ferramentas disponíveis para o agente
         # Aqui podemos adicionar mais ferramentas no futuro (ex: DadosDeUniversidade)
-        self.tools = [DadosDeEstudante()]
+        self.tools = [DadosDeEstudante(), PerfilAcademico()]
         
         # 3. Puxa o prompt padrão de ReAct da comunidade LangChain
         # Este prompt ensina o modelo a "Pensar, Agir, Observar"

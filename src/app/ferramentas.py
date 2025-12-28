@@ -1,7 +1,7 @@
 import pandas as pd
 from langchain.tools import BaseTool
 from src.config.gemini_setup import get_gemini_llm
-from src.services.fabrica_prompts import criar_prompt_analise_nome
+from src.services.fabrica_prompts import criar_prompt_analise_nome, criar_prompt_perfil_academico
 
 class DadosDeEstudante(BaseTool):
     name: str = "DadosDeEstudante"
@@ -52,3 +52,16 @@ class DadosDeEstudante(BaseTool):
             return f"Erro crítico: O arquivo {caminho_csv} não foi encontrado."
         except Exception as e:
             return f"Erro ao ler o CSV: {e}"
+        
+class PerfilAcademico(BaseTool):
+    name: str = "PerfilAcademico"
+    description: str = "Esta ferramenta cria um perfil acadêmico baseado nos dados do estudante."
+
+    def _run(self, input: str) -> str:
+        llm = get_gemini_llm()
+        prompt, parser = criar_prompt_perfil_academico()
+
+        chain = prompt | llm | parser
+
+        resposta = chain.invoke({"dados_do_estudante": input})
+        return f"Perfil acadêmico criado com base nos dados: {resposta}"

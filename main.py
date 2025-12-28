@@ -10,6 +10,8 @@ if __name__ == "__main__":
     pergunta = "Quais os dados da Ana?"
     pergunta = "Quais os dados da Bianca?"
     pergunta = "Quais os dados da Ana e da Bianca?"
+    pergunta = "Crie um perfil acadêmico para a Ana!"
+    pergunta = "Compare o perfil acadêmico da Ana e da Bianca!"
     
     print(f"\n🤖 Pergunta: {pergunta}")
     print("⏳ Processando...")

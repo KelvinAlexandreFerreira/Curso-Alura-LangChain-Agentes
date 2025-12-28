@@ -2,8 +2,8 @@ from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 
 
-from modelos import ExtratorDeEstudante
-from prompts_constants import TEMPLATE_ANALISE_NOME
+from src.domain.modelos import ExtratorDeEstudante
+from src.domain.prompts_constants import TEMPLATE_ANALISE_NOME
 
 def criar_prompt_analise_nome():
     

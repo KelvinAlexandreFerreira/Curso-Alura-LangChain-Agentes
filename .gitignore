@@ -1,0 +1,6 @@
+# Conteúdo do arquivo .gitignore
+/langchain/
+__pycache__/
+*.pyc
+*.env
+.vscode/settings.json

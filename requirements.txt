@@ -1,6 +1,6 @@
-openai==1.13.3
-langchain==0.1.11
-langchain-openai==0.0.8
+langchain==0.3.20
+langchain-community==0.3.19
+langchain-google-genai==2.0.7
 python-dotenv==1.0.1
 langchainhub==0.1.15
 pandas==2.2.2

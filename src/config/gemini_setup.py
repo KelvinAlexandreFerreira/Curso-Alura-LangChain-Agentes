@@ -13,7 +13,7 @@ def get_gemini_llm():
     
     # --- CONFIGURAÇÃO AVANÇADA ---
     configuracao_geracao = {
-        "temperature": 0.7,        
+        "temperature": 0.0,        
         "top_p": 0.95,            
         "top_k": 40,              
         "max_output_tokens": 8192,

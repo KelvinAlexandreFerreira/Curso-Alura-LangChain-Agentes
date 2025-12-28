@@ -5,7 +5,9 @@ from src.services.fabrica_prompts import criar_prompt_analise_nome, criar_prompt
 
 class DadosDeEstudante(BaseTool):
     name: str = "DadosDeEstudante"
-    description: str = "Esta ferramenta extrai o histórico e preferências de um estudante de acordo com o seu histórico"
+    description: str = """Esta ferramenta extrai o histórico e preferências de um estudante de acordo com o seu histórico.
+    Se você precisar comparar dois ou mais estudantes... você DEVE chamar esta ferramenta MÚLTIPLAS VEZES, uma para cada estudante.
+    Esta ferramenta requer como entrada o nome do estudante."""
 
     def _run(self, input: str) -> str:
         """
@@ -55,7 +57,10 @@ class DadosDeEstudante(BaseTool):
         
 class PerfilAcademico(BaseTool):
     name: str = "PerfilAcademico"
-    description: str = "Esta ferramenta cria um perfil acadêmico baseado nos dados do estudante."
+    description: str = """Esta ferramenta cria um perfil acadêmico baseado nos dados do estudante.
+    Esta ferramenta requer como entrada todos os dados do estudante.
+    Eu sou incapaz de buscar dados por conta própria.
+    Você tem que usar a ferramenta 'DadosDeEstudante' primeiro para obter os dados e depois passar para esta ferramenta."""
 
     def _run(self, input: str) -> str:
         llm = get_gemini_llm()

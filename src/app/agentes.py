@@ -2,6 +2,7 @@ from langchain.agents import create_react_agent, AgentExecutor
 from langchain import hub
 from src.config.gemini_setup import get_gemini_llm
 from src.app.ferramentas import DadosDeEstudante, PerfilAcademico
+from src.domain.prompts_constants import INSTRUCOES_PERSONA
 
 class Agente:
     def __init__(self):
@@ -21,6 +22,9 @@ class Agente:
         # 3. Puxa o prompt padrão de ReAct da comunidade LangChain
         # Este prompt ensina o modelo a "Pensar, Agir, Observar"
         self.prompt = hub.pull("hwchase17/react")
+
+        # Usamos a constante importada de src.domain.prompts_constants
+        self.prompt.template = INSTRUCOES_PERSONA + self.prompt.template
         
         # 4. Cria a estrutura do agente ReAct
         self.agente = create_react_agent(self.llm, self.tools, self.prompt)

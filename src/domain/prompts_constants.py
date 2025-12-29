@@ -7,6 +7,19 @@ Entrada:
 Formato de saída:
 {formato_saida}"""
 
+TEMPLATE_ANALISE_UNIVERSIDADE = """
+Sua missão é identificar o nome da universidade ou instituição de ensino na entrada abaixo.
+
+Entrada do usuário: "{input}"
+
+Regras Rígidas:
+1. Se a entrada for apenas um nome (ex: "USP", "Harvard"), use-o imediatamente.
+2. Identifique siglas ou nomes compostos.
+3. Responda ESTRITAMENTE com o JSON solicitado.
+
+{formato_saida}
+"""
+
 TEMPLATE_PERFIL_ACADEMICO = """- Fotmate o estudante para seu perfil acadêmico
 - Com os dados, identifique as opções de universidades sugeridas e cursos compatíveis com o interesse do aluno
 - Destaque o perfil do aluno dando ênfase  principalmente naquilo que faz sentido para as instituições de interesse do aluno

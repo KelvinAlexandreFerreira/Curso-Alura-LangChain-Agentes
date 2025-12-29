@@ -25,7 +25,7 @@ def get_gemini_llm():
         google_api_key=os.getenv("GEMINI_API_KEY"),
         
         # Otimização de requisições para evitar bloqueio
-        max_retries=0,            
+        max_retries=2,            
         
         # Aplica as configurações
         temperature=configuracao_geracao["temperature"],

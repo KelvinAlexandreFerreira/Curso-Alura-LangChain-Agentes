@@ -4,6 +4,9 @@ from pydantic import BaseModel, Field
 class ExtratorDeEstudante(BaseModel):
     estudante: str = Field(description="Nome do estudante sempre em letras minúsculas. Exemplo: joão, carlos, joana, carla.")
 
+class ExtratorDeUniversidade(BaseModel):
+    universidade: str = Field(description="Nome da universidade ou faculdade. Exemplo: USP, MIT, Harvard, Unicamp.")
+
 class Nota(BaseModel):
     area: str = Field(description="Nome da área de conhecimento.")
     nota: float = Field(description="Nota obtida pelo estudante na área de conhecimento.")

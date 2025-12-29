@@ -24,7 +24,12 @@ if __name__ == "__main__":
     pergunta = "Compare o perfil acadêmico da Ana e da Bianca!"
     pergunta = "Tenho sentido Ana desanimada com cursos de matemática. Seria uma boa parear ela com a Bianca?"
     pergunta = "Tenho sentido Ana desanimada com cursos de matemática. Seria uma boa parear ela com o Marcos?"
-    
+    pergunta = "Quais os dados da USP?"
+    pergunta = "Quais os dados da uNiCAmP?"
+    pergunta = "Quais os dados da uNi CAmP?"
+    pergunta = "Quais os dados da uNiComP?"
+    pergunta = "Entre USP e UFRJ, qual você recomenda para a acadêmica Ana?"
+
     print(f"\n🤖 Pergunta: {pergunta}")
     print("⏳ Processando...")
     

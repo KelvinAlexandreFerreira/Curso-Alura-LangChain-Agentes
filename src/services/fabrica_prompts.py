@@ -2,8 +2,8 @@ from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 
 
-from src.domain.modelos import ExtratorDeEstudante, PerfilAcademicoDeEstudante
-from src.domain.prompts_constants import TEMPLATE_ANALISE_NOME, TEMPLATE_PERFIL_ACADEMICO
+from src.domain.modelos import ExtratorDeEstudante, PerfilAcademicoDeEstudante, ExtratorDeUniversidade
+from src.domain.prompts_constants import TEMPLATE_ANALISE_NOME, TEMPLATE_PERFIL_ACADEMICO, TEMPLATE_ANALISE_UNIVERSIDADE
 
 def criar_prompt_analise_nome():
     
@@ -17,6 +17,15 @@ def criar_prompt_analise_nome():
         template=TEMPLATE_ANALISE_NOME
     )
 
+    return prompt, parser
+
+def criar_prompt_analise_universidade():
+    parser = JsonOutputParser(pydantic_object=ExtratorDeUniversidade)
+    prompt = PromptTemplate(
+        input_variables=["input"], 
+        partial_variables={"formato_saida": parser.get_format_instructions()},
+        template=TEMPLATE_ANALISE_UNIVERSIDADE
+    )
     return prompt, parser
 
 def criar_prompt_perfil_academico():

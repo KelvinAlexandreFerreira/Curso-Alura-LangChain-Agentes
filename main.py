@@ -22,8 +22,8 @@ if __name__ == "__main__":
     pergunta = "Quais os dados da Ana e da Bianca?"
     pergunta = "Crie um perfil acadêmico para a Ana!"
     pergunta = "Compare o perfil acadêmico da Ana e da Bianca!"
-    #pergunta = "Tenho sentido Ana desanimada com cursos de matemática. Seria uma boa parear ela com a Bianca?"
-    #pergunta = "Tenho sentido Ana desanimada com cursos de matemática. Seria uma boa parear ela com o Marcos?"
+    pergunta = "Tenho sentido Ana desanimada com cursos de matemática. Seria uma boa parear ela com a Bianca?"
+    pergunta = "Tenho sentido Ana desanimada com cursos de matemática. Seria uma boa parear ela com o Marcos?"
     
     print(f"\n🤖 Pergunta: {pergunta}")
     print("⏳ Processando...")

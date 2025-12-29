@@ -1,5 +1,9 @@
 # --- Template para análise de nome ---
-TEMPLATE_ANALISE_NOME = """Você deve analisar a {input} e extrair o nome de usuário informado.
+TEMPLATE_ANALISE_NOME = """Você deve analisar a entrada a seguire extrair o nome informado em minúsculo.
+Entrada:
+--------------------------
+{input} 
+--------------------------
 Formato de saída:
 {formato_saida}"""
 
